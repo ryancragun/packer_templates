@@ -9,9 +9,9 @@ echo "vagrant        ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers
 
 # Installing vagrant keys
 mkdir -pm 700 /home/vagrant/.ssh
-curl -Ssk 'https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub' > /home/vagrant/.ssh/authorized_keys
+curl -SskL 'https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub' > /home/vagrant/.ssh/authorized_keys
 chmod 0600 /home/vagrant/.ssh/authorized_keys
-chown -R vagrant /home/vagrant/.ssh
+chown -R vagrant:vagrant /home/vagrant/.ssh
 
 # Customize the message of the day
 echo 'Welcome! Virtualize all the things' > /etc/motd
